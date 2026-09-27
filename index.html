@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f6f5ee" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta
+      name="description"
+      content="Dein kleines Mathe-Abenteuer. Rechnen, entdecken und Schätze sammeln – vollständig offline."
+    />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <link rel="icon" href="assets/fox.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Funkelpfad · Dein Mathe-Abenteuer</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header>
+        <a class="brand" href="#home" aria-label="Funkelpfad Startseite"
+          ><span class="brand-icon">✦</span
+          ><span>funkelpfad<small>DEIN MATHE-ABENTEUER</small></span></a
+        >
+        <nav aria-label="Hauptnavigation">
+          <button data-nav="map">Abenteuer</button
+          ><button data-nav="collection">Meine Schätze</button>
+        </nav>
+        <div class="header-right">
+          <span class="score" title="Gesammelte Punkte"
+            >✦ <b id="points">0</b></span
+          ><button
+            class="icon-button"
+            id="parent"
+            aria-label="Elternbereich öffnen"
+          >
+            ⚙
+          </button>
+        </div>
+      </header>
+      <main id="main" tabindex="-1"></main>
+      <footer>
+        <span>Mit kleinen Schritten zu großen Abenteuern.</span
+        ><span id="offline" role="status"
+          >○ Offline-Speicher wird vorbereitet</span
+        >
+      </footer>
+      <p id="storage-warning" role="status" hidden></p>
+    </div>
+    <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+    <div
+      id="announcement"
+      class="sr-only"
+      role="status"
+      aria-live="polite"
+    ></div>
+    <script src="core.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

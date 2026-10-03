@@ -20,6 +20,7 @@ w.HTMLDialogElement.prototype.close = function () {
 };
 const errors = [];
 w.addEventListener("error", (e) => errors.push(e.message));
+w.eval(fs.readFileSync(path.join(dir, "version.js"), "utf8"));
 w.eval(fs.readFileSync(path.join(dir, "core.js"), "utf8"));
 w.eval(fs.readFileSync(path.join(dir, "app.js"), "utf8"));
 let checks = 0;
@@ -33,7 +34,7 @@ const click = (s) => {
   el.click();
 };
 const text = (s) => d.querySelector(s)?.textContent;
-const saved = () => JSON.parse(w.localStorage.getItem("funkelpfad-v1"));
+const saved = () => JSON.parse(w.localStorage.getItem("funkelpfad-v2"));
 const submit = (s) =>
   d
     .querySelector(s)

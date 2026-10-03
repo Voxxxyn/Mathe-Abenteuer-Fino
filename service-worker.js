@@ -1,12 +1,14 @@
 "use strict";
-// Change VERSION whenever any shipped file changes.
-const VERSION = "v1.0.3";
+// One shared release number; bump version.js whenever shipped files change.
+importScripts("version.js");
+const VERSION = "v" + self.FINO_VERSION;
 const PREFIX = "funkelpfad-" + new URL(self.registration.scope).pathname + "-";
 const CACHE = PREFIX + VERSION;
 const FILES = [
   "./",
   "index.html",
   "style.css",
+  "version.js",
   "core.js",
   "app.js",
   "manifest.json",

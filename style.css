@@ -1420,3 +1420,75 @@ dialog form {
   height: 192px;
   animation: pop 0.6s ease-out;
 }
+
+/* V2 additions preserve the original light palette and world illustrations. */
+.learning-switch { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 4px; }
+.learning-switch button { min-height:48px; border:1px solid var(--border); border-radius:24px; padding:10px 18px; background:var(--card); color:var(--ink); font-size:14px; font-weight:700; }
+.learning-switch [aria-pressed="true"] { background:var(--green); color:white; border-color:var(--green); }
+.training-panel { max-width:760px; margin:0 auto 32px; }
+.training-panel .secondary { margin:12px 8px; }
+.page-title > .fox { width:110px; }
+.table-options { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; margin:12px 0; }
+.table-options label { display:flex; align-items:center; gap:8px; min-height:48px; border:1px solid var(--border); border-radius:12px; padding:8px; cursor:pointer; }
+.table-options input { width:22px; height:22px; accent-color:var(--green); }
+.tempo-strip { display:flex; align-items:center; flex-wrap:wrap; gap:16px; padding:12px 20px; margin:10px auto; max-width:960px; background:#e9eedf; border:1px solid var(--border); border-radius:18px; color:var(--green); }
+.tempo-strip b { font-size:26px; font-variant-numeric:tabular-nums; }
+.tempo-strip small { color:var(--muted); }
+.row-sheet { max-width:760px; margin:20px auto; }
+.row-heading { display:flex; align-items:center; gap:20px; margin-bottom:20px; }
+.row-heading .fox { width:100px; }
+.row-heading h1 { font-size:34px; margin:8px 0; }
+.row-heading p { font-size:14px; }
+.row-task { display:grid; grid-template-columns:minmax(110px,1fr) minmax(70px,120px) minmax(100px,1fr); align-items:center; gap:14px; padding:12px 0; border-bottom:1px solid var(--border); }
+.row-task label { font-size:24px; font-weight:700; margin:0; text-align:right; }
+.row-task input { width:100%; min-height:54px; border:2px solid var(--border); border-radius:12px; padding:8px; font:inherit; font-size:24px; text-align:center; background:var(--bg); color:var(--ink); }
+.row-task input[aria-invalid="true"] { border-color:#ac6a37; }
+.row-task input:disabled { opacity:.55; }
+.row-task button { min-height:54px; padding:8px 12px; font-size:13px; }
+.row-task button:disabled { opacity:.5; box-shadow:none; }
+.row-complete input { background:#e2efd9; color:#326b4d; }
+.table-statistics p { display:flex; justify-content:space-between; gap:8px; border-bottom:1px solid var(--border); padding:10px 0; font-size:13px; }
+.error-type small { display:block; margin-top:8px; }
+.save-actions { display:flex; flex-wrap:wrap; gap:12px; }
+#save-status, #training-status, #import-status { margin:12px 0; }
+:root[data-theme="dark"] { color-scheme:dark; --bg:#17271f; --ink:#f3f1df; --muted:#b7c4b8; --green:#8bc69d; --border:#435748; --gold:#f0c36b; --card:#23362a; }
+[data-theme="dark"] .primary, [data-theme="dark"] .learning-switch [aria-pressed="true"], [data-theme="dark"] .keypad .confirm { background:#39744f; color:#ffffff; border-color:#6d9d78; box-shadow:0 4px 0 #10261a; }
+[data-theme="dark"] .brand-icon { background:#39744f; }
+[data-theme="dark"] .hero { background:#263b2b; border-color:var(--border); }
+[data-theme="dark"] .hero-art:after { background:linear-gradient(90deg,#263b2b,transparent 25%); }
+[data-theme="dark"] h1 em { color:#a2d1a1; }
+[data-theme="dark"] .hero-note, [data-theme="dark"] footer, [data-theme="dark"] .bottom-note, [data-theme="dark"] #offline { color:var(--muted); }
+[data-theme="dark"] .pill, [data-theme="dark"] .speech, [data-theme="dark"] .map-banner > div, [data-theme="dark"] .level-banner > div { background:#24392bed; color:var(--ink); border-color:var(--border); }
+[data-theme="dark"] .art-label { background:#24392b; color:var(--ink); padding:5px; border-radius:6px; }
+[data-theme="dark"] .secondary, [data-theme="dark"] .reward-card, [data-theme="dark"] .metrics > div, [data-theme="dark"] .privacy, [data-theme="dark"] .tempo-strip, [data-theme="dark"] .collect-card, [data-theme="dark"] .collect-symbol { background:#304734; color:var(--ink); border-color:var(--border); }
+[data-theme="dark"] .collect-card.found { background:var(--card); }
+[data-theme="dark"] .found .collect-symbol { background:#354435; color:#f0c36b; }
+[data-theme="dark"] .world-number, [data-theme="dark"] .here { background:#22382bee; color:#f5efd9; }
+[data-theme="dark"] .score, [data-theme="dark"] .badge, [data-theme="dark"] .series, [data-theme="dark"] .gold, [data-theme="dark"] .treasure { background:#4a422b; color:#f0ce7e; }
+[data-theme="dark"] .mint, [data-theme="dark"] .level-orb, [data-theme="dark"] .unlock-message, [data-theme="dark"] nav button.active { background:#304c37; color:#a9d6af; border-color:var(--border); }
+[data-theme="dark"] .level-orb.complete { background:#39744f; color:white; }
+[data-theme="dark"] .peach { background:#49382c; color:#f0b987; }
+[data-theme="dark"] .lilac { background:#3f354d; color:#d1b9eb; }
+[data-theme="dark"] .mini-progress, [data-theme="dark"] .progress { background:#405340; }
+[data-theme="dark"] .exercise, [data-theme="dark"] .world-card { box-shadow:0 5px 0 #102117; }
+[data-theme="dark"] .keypad button, [data-theme="dark"] .choices button, [data-theme="dark"] select, [data-theme="dark"] input[type="number"], [data-theme="dark"] input[name="confirmation"], [data-theme="dark"] output { background:#304734; color:var(--ink); border-color:#66836a; }
+[data-theme="dark"] output.correct, [data-theme="dark"] .row-complete input { background:#304f36; color:#bfedc6; border-color:#8cbb91; }
+[data-theme="dark"] .equation > span, [data-theme="dark"] .feedback { color:#b9cbb4; }
+[data-theme="dark"] .feedback.success { color:#b6e3b8; }
+[data-theme="dark"] .feedback.gentle { color:#f0c88b; }
+[data-theme="dark"] .danger, [data-theme="dark"] #storage-warning { background:#4b352b; color:#ffccad; border-color:#b37a5c; }
+[data-theme="dark"] .level-stars, [data-theme="dark"] .result-stars, [data-theme="dark"] .celebrate { color:#f0c36b; }
+@media(max-width:600px) {
+ .table-options { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .row-sheet { padding:20px 12px; }
+ .row-heading { gap:12px; }
+ .row-heading .fox { width:65px; }
+ .row-heading h1 { font-size:26px; }
+ .row-task { grid-template-columns:minmax(90px,1fr) 70px 92px; gap:8px; }
+ .row-task label { font-size:20px; }
+ .row-task button { font-size:11px; padding:6px; }
+ .learning-switch button { padding:10px 12px; }
+}
+@media(max-width:760px) {
+ [data-theme="dark"] .hero-art:after { background:linear-gradient(#263b2b,transparent 25%); }
+}

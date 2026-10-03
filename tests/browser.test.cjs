@@ -44,7 +44,7 @@ const fs = require("node:fs");
   }
   async function saved() {
     return page.evaluate(() =>
-      JSON.parse(localStorage.getItem("funkelpfad-v1")),
+      JSON.parse(localStorage.getItem("funkelpfad-v2")),
     );
   }
   async function answer() {

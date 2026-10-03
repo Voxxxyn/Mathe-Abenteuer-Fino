@@ -43,6 +43,7 @@ const dir = path.resolve(__dirname, ".."),
   stores.set("other-app-cache", new Map());
   stores.set("funkelpfad-/mathe-abenteuer/-old", new Map());
   const sandbox = {
+    importScripts: () => { sandbox.self.FINO_VERSION = require("../core.js").VERSION; },
     URL,
     caches,
     fetch: async () => {
@@ -76,6 +77,7 @@ const dir = path.resolve(__dirname, ".."),
     "",
     "index.html",
     "app.js",
+    "version.js",
     "core.js",
     "style.css",
     "manifest.json",
@@ -116,6 +118,8 @@ const dir = path.resolve(__dirname, ".."),
   handlers.message({ data: { type: "SKIP_WAITING" } });
   assert.ok(activated);
   const manifest = JSON.parse(fs.readFileSync(path.join(dir, "manifest.json")));
+  assert.equal(manifest.id, "./");
+  assert.ok(stores.has("funkelpfad-/mathe-abenteuer/-v2.0.0"));
   assert.equal(manifest.start_url, "./");
   assert.equal(manifest.scope, "./");
   for (const icon of manifest.icons) {
@@ -125,7 +129,7 @@ const dir = path.resolve(__dirname, ".."),
     assert.equal(png.readUInt32BE(20), n);
   }
   console.log(
-    "PASS: all 15 offline resources, subpath scope, lifecycle, old-cache cleanup, update activation, offline navigation, isolated caches, manifest paths and real PNG dimensions.",
+    "PASS: all 16 offline resources, subpath scope, lifecycle, old-cache cleanup, update activation, offline navigation, isolated caches, manifest paths and real PNG dimensions.",
   );
 })().catch((e) => {
   console.error(e);
